@@ -67,5 +67,4 @@ Bloccit::Application.configure do
 
   # http://parkerbloccit.herokuapp.com
   config.action_mailer.default_url_options = { :host => 'parkerbloccit.herokuapp.com'}
-
 end
