@@ -14,7 +14,7 @@
         </div>
       </div>
     <% end %>
-  </div>
+    <%= will_paginate @topics %>
   <div class="span4">
     <% if can? :create, Topic %>
       <%= link_to "New Topic", new_topic_path, class: 'btn btn-large btn-block' %>
