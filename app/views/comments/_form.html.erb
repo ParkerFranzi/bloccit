@@ -1,9 +1,9 @@
-<%= form_for [topic, post, comment], html: { class: 'form-horizontal' } do |f| %>
-  <% if post.errors.any? %>
+<%= form_for [topic, post, comment], htm: { class: 'form-horizontal' } do |f| %>
+  <% if comment.errors.any? %>
     <div class="alert alert-block">
-      <h4>There are <%= pluralize(post.errors.count, "error") %>.</h4>
+      <h4>There are <%= pluralize(comment.errors.count, "error") %> errors.</h4>
       <ul>
-        <% post.errors.full_messages.each do |msg| %>
+        <% comment.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
