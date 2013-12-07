@@ -35,7 +35,7 @@ rand(4..10).times do
     # comments...
   post_count = Post.count
   User.all.each do |user|
-    rand(30..50).times do
+    rand(10..20).times do
       p = Post.find(rand(1..post_count))
       c = user.comments.create(
         body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"),
