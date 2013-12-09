@@ -1,6 +1,6 @@
 require 'faker'
 topics = []
-15.times do
+10.times do
   topics << Topic.create(
     name: Faker::Lorem.words(rand(1..10)).join(" "), 
     description: Faker::Lorem.paragraph(rand(1..4))
@@ -30,12 +30,13 @@ rand(4..10).times do
     # set the created_at to a time within the past year
     p.update_attribute(:created_at, Time.now - rand(600..31536000))
 
+    p.update_rank
     topics.rotate! # add this line to move the first topic to the last, so that posts get assigned to different topics.
 
     # comments...
   post_count = Post.count
   User.all.each do |user|
-    rand(10..20).times do
+    rand(5..10).times do
       p = Post.find(rand(1..post_count))
       c = user.comments.create(
         body: Faker::Lorem.paragraphs(rand(1..2)).join("\n"),
