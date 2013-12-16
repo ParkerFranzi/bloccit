@@ -12,15 +12,14 @@
     <p><%= image_tag(@post.image_url) if @post.image? %></p>
     
     <hr/>
-
-    <h2><%= @comments.count %> Comments</h2>
-
+    
+    <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
     <%= render partial: 'comments/comment', collection: @comments %>
 
     <% if can? :create, Comment %>
       <hr/>
-      
-      <a href="#" class="js-add-comment" data-selctor="js-new-comment">Add Comment</a>
+
+      <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
       <br/>
       <div class="js-new-comment hide">
         <h4>New Comment</h4>
